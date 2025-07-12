@@ -103,8 +103,11 @@ jobs:
       shell: bash
       run: |
         cd build && ninja
+    - name: Zip build output
+      run: |
+        zip -r aseprite-${{ runner.os }}.zip build/bin/*
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
         name: aseprite-${{ runner.os }}
-        path: build/bin/aseprite* 
+        path: aseprite-${{ runner.os }}.zip
