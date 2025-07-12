@@ -32,7 +32,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: aseprite/aseprite
-        ref: develop
         submodules: recursive
         fetch-depth: 0
     - name: Install Dependencies
