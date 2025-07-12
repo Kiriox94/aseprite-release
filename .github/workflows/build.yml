@@ -28,10 +28,13 @@ jobs:
           - build_type: RelWithDebInfo
             scripting: noscripts
     steps:
-    - uses: actions/checkout@v4
-    - name: Init submodules
-      run: |
-        git submodule update --init --recursive
+    - name: checkout - project
+      uses: actions/checkout@v2
+      with:
+        repository: aseprite/aseprite
+        ref: develop
+        submodules: recursive
+        fetch-depth: 0
     - name: Install Dependencies
       if: runner.os == 'Linux'
       shell: bash
