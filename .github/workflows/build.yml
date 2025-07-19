@@ -108,5 +108,5 @@ jobs:
       with:
         name: aseprite-${{ runner.os }}
         path: |
-            build/bin/aseprite
+            build/bin/aseprite*
             build/bin/data/
